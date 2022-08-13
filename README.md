@@ -92,5 +92,5 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 ## Workspace Library
 
 ```sh
-yarn nx generate @nrwl/react:library cms-test --directory=@cmsonfire --buildable --compiler=swc --importPath=@cmsonfire/cms-test --pascalCaseFiles --publishable --no-routing --no-interactive
+yarn nx generate @nrwl/react:library cms-test --directory=@cmsonfire --buildable --compiler=babel --importPath=@cmsonfire/cms-test --pascalCaseFiles --publishable --no-routing --no-interactive
 ```
