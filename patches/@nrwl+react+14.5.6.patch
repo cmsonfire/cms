@@ -1,11 +1,10 @@
 diff --git a/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__ b/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__
-deleted file mode 100644
-index fccd738..0000000
+index fccd738..35455fa 100644
 --- a/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__
-+++ /dev/null
-@@ -1,16 +0,0 @@
--{
--  "presets": [
++++ b/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__
+@@ -1,16 +1,8 @@
+ {
+   "presets": [
 -    [
 -      "@nrwl/react/babel", {
 -        "runtime": "automatic",
@@ -13,23 +12,17 @@ index fccd738..0000000
 -        <% if (style === '@emotion/styled') { %>,"importSource": "@emotion/react"<% } %>
 -      }
 -    ]
--  ],
++    "@babel/preset-env",
++    "@babel/preset-typescript",
++    ["@babel/preset-react", { "runtime": "automatic" }]
+   ],
 -  "plugins": [
 -    <% if (style === 'styled-components') { %>["styled-components", { "pure": true, "ssr": true }]<% } %>
 -    <% if (style === 'styled-jsx') { %>"styled-jsx/babel"<% } %>
 -    <% if (style === '@emotion/styled') { %>"@emotion/babel-plugin"<% } %>
 -  ]
--}
-diff --git a/node_modules/@nrwl/react/src/generators/library/files/lib/babel.config.cjs b/node_modules/@nrwl/react/src/generators/library/files/lib/babel.config.cjs
-new file mode 100644
-index 0000000..0684688
---- /dev/null
-+++ b/node_modules/@nrwl/react/src/generators/library/files/lib/babel.config.cjs
-@@ -0,0 +1,4 @@
-+module.exports = {
-+  presets: ['@babel/preset-env', '@babel/preset-react'],
-+  plugins: ['@babel/plugin-syntax-jsx'],
-+};
++  "plugins": ["@babel/plugin-syntax-jsx"]
+ }
 diff --git a/node_modules/@nrwl/react/src/generators/library/files/lib/tsconfig.json__tmpl__ b/node_modules/@nrwl/react/src/generators/library/files/lib/tsconfig.json__tmpl__
 index c5c5460..eabc8a3 100644
 --- a/node_modules/@nrwl/react/src/generators/library/files/lib/tsconfig.json__tmpl__
