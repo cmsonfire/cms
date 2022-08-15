@@ -2,7 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "@cmsonfire/cms-types": "packages/@cmsonfire/cms-types",
-    "@cmsonfire/cms-lib-template": "packages/@cmsonfire/cms-lib-template"
+    "@cmsonfire/cms-widget-text": "packages/@cmsonfire/cms-widget-text",
+    "@cmsonfire/cms-lib-template": "packages/@cmsonfire/cms-lib-template",
+    "@cmsonfire/cms-types": "packages/@cmsonfire/cms-types"
   }
 }

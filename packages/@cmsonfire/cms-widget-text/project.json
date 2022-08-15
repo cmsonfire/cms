@@ -1,0 +1,45 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/@cmsonfire/cms-widget-text/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/@cmsonfire/cms-widget-text",
+        "tsConfig": "packages/@cmsonfire/cms-widget-text/tsconfig.lib.json",
+        "project": "packages/@cmsonfire/cms-widget-text/package.json",
+        "entryFile": "packages/@cmsonfire/cms-widget-text/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/@cmsonfire/cms-widget-text/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/@cmsonfire/cms-widget-text/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/@cmsonfire/cms-widget-text"],
+      "options": {
+        "jestConfig": "packages/@cmsonfire/cms-widget-text/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
