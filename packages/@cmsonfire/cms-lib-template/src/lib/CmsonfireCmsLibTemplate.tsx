@@ -1,14 +1,19 @@
-import styles from './CmsonfireCmsLibTemplate.module.css';
+import { CmsWidgetOptions, CmsWidget } from '@cmsonfire/cms-types';
+import controlComponent from './CmsTemplateControl';
+import previewComponent from './CmsTemplatePreview';
 
-/* eslint-disable-next-line */
-export interface CmsonfireCmsLibTemplateProps {}
-
-export function CmsonfireCmsLibTemplate(props: CmsonfireCmsLibTemplateProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to CmsonfireCmsLibTemplate!</h1>
-    </div>
-  );
+function Widget(props = {}): CmsWidgetOptions {
+  return {
+    name: 'text',
+    controlComponent,
+    previewComponent,
+    ...props,
+  };
 }
 
-export default CmsonfireCmsLibTemplate;
+export const NetlifyCmsWidgetTemplate: CmsWidget = {
+  Widget,
+  controlComponent,
+  previewComponent,
+};
+export default NetlifyCmsWidgetTemplate;
