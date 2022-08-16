@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "removeDirectory": {
+      "implementation": "./impl",
+      "schema": "./schema.json",
+      "description": "Removes the dist package.publishConfig.directory"
+    }
+  }
+}

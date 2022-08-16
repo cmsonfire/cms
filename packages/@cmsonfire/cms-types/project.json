@@ -40,6 +40,12 @@
         "jestConfig": "packages/@cmsonfire/cms-types/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "removeDirectory": {
+      "executor": "./tools/executors/changesets:removeDirectory",
+      "options": {
+        "pathToPackage": "dist/packages/@cmsonfire/cms-types"
+      }
     }
   }
 }
