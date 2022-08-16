@@ -1,49 +1,24 @@
 # CMS
 
-This project is a proof in concept to use NX for the monorepo for a `netlify-cms` rewrite.
+This project is a proof of concept to use NX for the monorepo for a `netlify-cms` rewrite.
 
-## Adding capabilities to your workspace
+At first, this project will follow most config and api requirements to allow for an easy conversion to `@cmsonfire/cms-app` with no guarantee of breaking changes. Improvements will be made to standardize design decisions over trying to simplify usage for plug-n-play (3rd party projects will be able to do plug-n-play versions).
 
-## Generate a library
+Here is a starter list of targets:
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+- [x] - Typescript
+- [ ] - UI Style can be extended
+- [ ] - All backend API's will be standard options (Major version bump on change)
+- [ ] - Replace Redux
+- [ ] - Replace Immutable
+- [ ] - Use xState ?
+- [ ] - Use react-query ?
+- [ ] - Use react-location ?
+- [ ] - Replace markdown editor ?
+- [ ] - Support for mdx in editor ?
 
-> You can also use any of the plugins above to generate libraries as well.
+**NOTE:** This project is not a direct fork of `netlify-cms`, although most code will adhere to the workflow/config of the project as close as possible. Remember, this is a POC and will make decisions based on the best DX/UX. There will be an API first approach rather than git first approach for backend development (bring your own backend).
 
-Libraries are shareable across libraries and applications. They can be imported from `@cms/mylib`.
+## CONTRIBUTING
 
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Workspace Library
-
-```sh
-yarn nx generate @nrwl/react:library cms-test --directory=@cmsonfire --buildable --compiler=babel --importPath=@cmsonfire/cms-test --pascalCaseFiles --publishable --no-routing --no-interactive
-```
-
-yarn nx generate @nrwl/react:library cms-types --directory=@cmsonfire --buildable --compiler=babel --importPath=@cmsonfire/cms-types --pascalCaseFiles --publishable --no-routing --no-interactive
+Contributing is locked until there is a clear acceptance that a POC is sustainable ($$). At that time, there will be an opening of the project for contributions. Please be patient.

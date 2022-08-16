@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "patch-package",
+    "release": "yarn changeset publish",
     "compile:tools": "yarn tsc tools/executors/changesets/impl",
     "build:all": "nx run-many --target=build",
     "test:all": "nx run-many --target=test",
