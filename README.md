@@ -7,6 +7,7 @@ At first, this project will follow most config and api requirements to allow for
 Here is a starter list of targets:
 
 - [x] - Typescript
+- [x] - ES Modules
 - [ ] - UI Style can be extended
 - [ ] - All backend API's will be standard options (Major version bump on change)
 - [ ] - Replace Redux
