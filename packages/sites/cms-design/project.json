@@ -1,0 +1,62 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/sites/cms-design",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "packages/sites/cms-design",
+        "outputPath": "dist/packages/sites/cms-design"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "packages/sites/cms-design"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "cms-design:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "cms-design:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "cms-design:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "cms-design:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/sites/cms-design"],
+      "options": {
+        "jestConfig": "packages/sites/cms-design/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/sites/cms-design/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
