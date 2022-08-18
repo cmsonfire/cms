@@ -16,7 +16,10 @@
 .wrapper {
     width: 100%;
 }
-
+.widgetWrapper {
+    background-color: var(--gray-0);
+    width: var(--size-content-1);
+}
 .rounded {
     border-radius: var(--size-5);
 }
@@ -169,11 +172,11 @@
     }
 }
 
-.learningMaterials {
+.gitlinks {
     padding: 2.5rem var(--size-5);
 }
 
-.learningMaterials h2 {
+.gitlinks h2 {
     font-weight: var(--font-weight-5);
     font-size: var(--font-size-3);
     letter-spacing: var(--font-letterspacing-1);
@@ -256,78 +259,13 @@
 
 /* #other-links {} */
 
-.nxConsole:hover {
-    background-color: var(--blue-7);
-}
-
-.nxConsole svg {
-    color: var(--blue-7);
-}
-
-.nxRepo:hover {
+.repo:hover {
     background-color: var(--gray-8);
 }
 
-.nxRepo svg {
+.repo svg {
     color: var(--gray-8);
 }
-
-.nxCloud {
-    margin-bottom: var(--size-7);
-    margin-top: var(--size-7);
-    padding: 2.5rem var(--size-7);
-}
-
-.nxCloud>div {
-    align-items: center;
-    display: flex;
-}
-
-.nxCloud>div svg {
-    border-radius: var(--radius-conditional-1);
-    flex-shrink: 0;
-    width: 3rem;
-}
-
-.nxCloud>div h2 {
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-4);
-    letter-spacing: var(--font-letterspacing-1);
-    line-height: var(--font-lineheight-3);
-    padding-left: var(--size-3);
-    padding-right: var(--size-3);
-}
-
-.nxCloud>div h2 span {
-    display: block;
-    font-size: var(--font-size-fluid-0);
-    font-weight: var(--font-weight-3);
-    line-height: var(--font-lineheight-1);
-}
-
-.nxCloud p {
-    font-size: var(--font-size-fluid-0);
-    line-height: var(--size-5);
-    margin-top: var(--size-3);
-}
-
-.nxCloud pre {
-    margin-top: var(--size-3);
-}
-
-.nxCloud a {
-    color: var(--gray-6);
-    display: block;
-    font-size: var(--font-size-fluid-0);
-    line-height: var(--font-lineheight-1);
-    margin-top: var(--size-5);
-    text-align: right;
-}
-
-.nxCloud a:hover {
-    text-decoration: underline;
-}
-
 .commandButton {
     color: var(--blue-9);
     margin-top: var(--size-9);
@@ -335,12 +273,12 @@
 .commandButton:hover {
     color: var(--blue-7);
 }
-.commands {
+.widgets {
     padding: 2.5rem var(--size-7);
     margin-top: 3.5rem;
 }
 
-.commands h2 {
+.widgets h2 {
     font-size: 1.25rem;
     font-weight: var(--font-weight-4);
     letter-spacing: -0.025em;
@@ -349,7 +287,7 @@
     padding-right: var(--size-3);
 }
 
-.commands p {
+.widgets p {
     font-size: var(--size-3);
     font-weight: var(--font-weight-3);
     line-height: var(--size-5);
