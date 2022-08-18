@@ -195,10 +195,10 @@ export function Index() {
               </summary>
               <pre>
                 <span># Import UI lib</span>
-                import CMS from '@cmsonfire/cms-core';
+                import CMS from &apos;@cmsonfire/cms-core&apos;;
                 <br />
                 import {`{CmsonfireCmsWidgetText}`} from
-                '@cmsonfire/cms-widget-text';
+                &apos;@cmsonfire/cms-widget-text&apos;;
                 <span># Add Your Component</span>
                 CMS.registerWidget(CmsonfireCmsWidgetText.Widget())
               </pre>
