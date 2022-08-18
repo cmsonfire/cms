@@ -1,0 +1,64 @@
+/* the props */
+@import "open-props/postcss/style";
+
+/* optional imports that use the props */
+@import "open-props/postcss/normalize";
+@import "open-props/buttons";
+
+details {
+  align-items: center;
+  display: flex;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+details pre>span {
+  color: rgba(181, 181, 181, 1);
+  display: block;
+}
+
+summary {
+  border-radius: 0.5rem;
+  display: flex;
+  font-weight: 400;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter,
+    -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+summary:hover {
+  color: var(--gray-2);
+  background-color: var(--gray-6);}
+
+summary svg {
+  height: 1.5rem;
+  margin-right: 1rem;
+  width: 1.5rem;
+}
+
+svg {
+  display: block;
+  vertical-align: middle;
+  shape-rendering: auto;
+  text-rendering: optimizeLegibility;
+}
+
+pre {
+  background-color: rgba(55, 65, 81, 1);
+  border-radius: 0.25rem;
+  color: rgba(229, 231, 235, 1);
+  font-family: var(--font-mono);
+  overflow: auto;
+  padding: var(--size-1) var(--size-2);
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
