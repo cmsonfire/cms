@@ -43,7 +43,7 @@ index 1254163..68a1918 100644
    });
  });
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
-index 00122d4..f45685f 100644
+index 00122d4..1a7e29f 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 @@ -23,10 +23,6 @@ import { Route, Link } from 'react-router-dom';
@@ -57,7 +57,7 @@ index 00122d4..f45685f 100644
  <% if (styledModule && styledModule !== 'styled-jsx') { %>
  const Styled<%= className %> = styled.div`
    color: pink;
-@@ -50,20 +46,25 @@ export class <%= className %> extends Component<<%= className %>Props> {
+@@ -50,20 +46,23 @@ export class <%= className %> extends Component<<%= className %>Props> {
    }
  }
  <% } else { %>
@@ -87,15 +87,14 @@ index 00122d4..f45685f 100644
 +  };
 +}
 +
-+export const <%= className %>: CmsWidget = {
++export const <<%= className %>>Widget: CmsWidget = {
 +  Widget,
 +  controlComponent,
 +  previewComponent,
  };
  <% } %>
  
- export default <%= className %>;
-+
+-export default <%= className %>;
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__
 new file mode 100644
 index 0000000..4bca38a
