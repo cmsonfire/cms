@@ -1,8 +1,12 @@
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
-index 1254163..68a1918 100644
+index 1254163..98b9ae1 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
-@@ -4,7 +4,38 @@ import <%= className %> from './<%= fileName %>';
+@@ -1,10 +1,41 @@
+ import { render } from '@testing-library/react';
+ 
+-import <%= className %> from './<%= fileName %>';
++import { <%= className %> } from './<%= fileName %>';
  
  describe('<%= className %>', () => {
    it('should render successfully', () => {
@@ -43,7 +47,7 @@ index 1254163..68a1918 100644
    });
  });
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
-index 00122d4..1a7e29f 100644
+index 00122d4..cb4aaac 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 @@ -23,10 +23,6 @@ import { Route, Link } from 'react-router-dom';
@@ -87,7 +91,7 @@ index 00122d4..1a7e29f 100644
 +  };
 +}
 +
-+export const <<%= className %>>Widget: CmsWidget = {
++export const <%= className %>: CmsWidget = {
 +  Widget,
 +  controlComponent,
 +  previewComponent,
@@ -97,13 +101,13 @@ index 00122d4..1a7e29f 100644
 -export default <%= className %>;
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__
 new file mode 100644
-index 0000000..4bca38a
+index 0000000..cd24c80
 --- /dev/null
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__
 @@ -0,0 +1,25 @@
 +import { ControlComponentProps } from '@cmsonfire/cms-types';
 +
-+const TemplateControl = (props: ControlComponentProps) => {
++const <%= className %>Control = (props: ControlComponentProps) => {
 +  const {
 +    forID, 
 +    value,
@@ -125,20 +129,20 @@ index 0000000..4bca38a
 +  );
 +};
 +
-+export default TemplateControl;
++export default <%= className %>Control;
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__
 new file mode 100644
-index 0000000..9fd764e
+index 0000000..46ef7f7
 --- /dev/null
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__
 @@ -0,0 +1,8 @@
 +import { PreviewComponentProps } from '@cmsonfire/cms-types';
 +
-+function TemplatePreview(props: PreviewComponentProps) {
++function <%= className %>Preview(props: PreviewComponentProps) {
 +  return <div>{props.value}</div>;
 +}
 +
-+export default TemplatePreview; 
++export default <%= className %>Preview; 
 +
 diff --git a/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__ b/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__
 index fccd738..35455fa 100644
