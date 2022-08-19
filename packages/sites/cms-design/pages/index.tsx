@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { CmsonfireCmsWidgetText } from '@cmsonfire/cms-widget-text';
+import { TextWidget } from '@cmsonfire/cms-widget-text';
 
 export function Index() {
   /*
@@ -203,7 +203,7 @@ export function Index() {
                 CMS.registerWidget(CmsonfireCmsWidgetText.Widget())
               </pre>
               <p>
-                <CmsonfireCmsWidgetText.controlComponent
+                <TextWidget.controlComponent
                   forID="test"
                   classNameWrapper={styles.widgetWrapper}
                   setActiveStyle={() => null}
@@ -212,7 +212,7 @@ export function Index() {
                     console.log(event);
                   }}
                   value={'This is text'}
-                ></CmsonfireCmsWidgetText.controlComponent>
+                ></TextWidget.controlComponent>
               </p>
             </details>
             <details>

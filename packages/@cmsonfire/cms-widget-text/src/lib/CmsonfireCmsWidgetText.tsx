@@ -11,10 +11,8 @@ function Widget(props = {}): CmsWidgetOptions {
   };
 }
 
-export const CmsonfireCmsWidgetText: CmsWidget = {
+export const TextWidget: CmsWidget = {
   Widget,
   controlComponent,
   previewComponent,
 };
-
-export default CmsonfireCmsWidgetText;
