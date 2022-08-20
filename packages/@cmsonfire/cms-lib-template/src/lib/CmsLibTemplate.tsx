@@ -1,6 +1,6 @@
 import { CmsWidgetOptions, CmsWidget } from '@cmsonfire/cms-types';
-import controlComponent from './CmsonfireCmsWidgetTextControl';
-import previewComponent from './CmsonfireCmsWidgetTextPreview';
+import controlComponent from './CmsLibTemplateControl';
+import previewComponent from './CmsLibTemplatePreview';
 
 function Widget(props = {}): CmsWidgetOptions {
   return {
@@ -11,7 +11,7 @@ function Widget(props = {}): CmsWidgetOptions {
   };
 }
 
-export const TextWidget: CmsWidget = {
+export const CmsLibTemplate: CmsWidget = {
   Widget,
   controlComponent,
   previewComponent,

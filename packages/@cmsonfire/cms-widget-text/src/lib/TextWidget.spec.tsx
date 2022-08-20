@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 
-import CmsonfireCmsWidgetText from './CmsonfireCmsWidgetText';
+import { TextWidget } from './TextWidget';
 
-describe('CmsonfireCmsWidgetText', () => {
+describe('TextWidget', () => {
   it('should render successfully', () => {
-    const ControlWidget = CmsonfireCmsWidgetText.controlComponent;
-    const PreviewWidget = CmsonfireCmsWidgetText.previewComponent;
+    const ControlWidget = TextWidget.controlComponent;
+    const PreviewWidget = TextWidget.previewComponent;
     const { baseElement } = render(
       <div>
         <ControlWidget
@@ -21,7 +21,7 @@ describe('CmsonfireCmsWidgetText', () => {
     expect(baseElement).toBeTruthy();
   });
   it('should render successfully: functional', () => {
-    const Widget = CmsonfireCmsWidgetText.Widget();
+    const Widget = TextWidget.Widget();
     const ControlWidget = Widget.controlComponent;
     const PreviewWidget = Widget.previewComponent;
     const { baseElement } = render(

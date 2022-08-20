@@ -1,1 +1,1 @@
-export { TextWidget } from './lib/CmsonfireCmsWidgetText';
+export { TextWidget } from './lib/TextWidget';

@@ -1,7 +1,7 @@
 import { ControlComponentProps } from '@cmsonfire/cms-types';
 import Textarea from 'react-textarea-autosize';
 
-const TemplateControl = (props: ControlComponentProps) => {
+const TextWidgetControl = (props: ControlComponentProps) => {
   const {
     forID,
     value,
@@ -23,4 +23,4 @@ const TemplateControl = (props: ControlComponentProps) => {
   );
 };
 
-export default TemplateControl;
+export default TextWidgetControl;

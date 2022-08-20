@@ -1,6 +1,6 @@
 import { CmsWidgetOptions, CmsWidget } from '@cmsonfire/cms-types';
-import controlComponent from './CmsTemplateControl';
-import previewComponent from './CmsTemplatePreview';
+import controlComponent from './TextWidgetControl';
+import previewComponent from './TextWidgetPreview';
 
 function Widget(props = {}): CmsWidgetOptions {
   return {
@@ -11,9 +11,8 @@ function Widget(props = {}): CmsWidgetOptions {
   };
 }
 
-export const NetlifyCmsWidgetTemplate: CmsWidget = {
+export const TextWidget: CmsWidget = {
   Widget,
   controlComponent,
   previewComponent,
 };
-export default NetlifyCmsWidgetTemplate;

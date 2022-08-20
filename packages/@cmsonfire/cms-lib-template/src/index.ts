@@ -1,1 +1,1 @@
-export * from './lib/CmsonfireCmsLibTemplate';
+export { CmsLibTemplate } from './lib/CmsLibTemplate';

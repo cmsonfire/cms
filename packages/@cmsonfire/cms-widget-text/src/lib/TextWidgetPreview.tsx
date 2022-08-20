@@ -1,7 +1,7 @@
 import { PreviewComponentProps } from '@cmsonfire/cms-types';
 
-function TemplatePreview(props: PreviewComponentProps) {
+function TextWidgetPreview(props: PreviewComponentProps) {
   return <div>{props.value}</div>;
 }
 
-export default TemplatePreview;
+export default TextWidgetPreview;

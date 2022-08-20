@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
-import CmsonfireCmsLibTemplate from './CmsonfireCmsLibTemplate';
+import { CmsLibTemplate } from './CmsLibTemplate';
 
-describe('CmsonfireCmsLibTemplate', () => {
+describe('CmsLibTemplate', () => {
   it('should render successfully', () => {
-    const ControlWidget = CmsonfireCmsLibTemplate.controlComponent;
-    const PreviewWidget = CmsonfireCmsLibTemplate.previewComponent;
+    const ControlWidget = CmsLibTemplate.controlComponent;
+    const PreviewWidget = CmsLibTemplate.previewComponent;
     const { baseElement } = render(
       <div>
         <ControlWidget
@@ -20,7 +20,7 @@ describe('CmsonfireCmsLibTemplate', () => {
     expect(baseElement).toBeTruthy();
   });
   it('should render successfully: functional', () => {
-    const Widget = CmsonfireCmsLibTemplate.Widget();
+    const Widget = CmsLibTemplate.Widget();
     const ControlWidget = Widget.controlComponent;
     const PreviewWidget = Widget.previewComponent;
     const { baseElement } = render(
