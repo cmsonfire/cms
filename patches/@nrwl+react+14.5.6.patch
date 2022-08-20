@@ -1,18 +1,32 @@
+diff --git a/node_modules/@nrwl/react/src/generators/component/component.js b/node_modules/@nrwl/react/src/generators/component/component.js
+index d7421f2..f9d0ddf 100644
+--- a/node_modules/@nrwl/react/src/generators/component/component.js
++++ b/node_modules/@nrwl/react/src/generators/component/component.js
+@@ -89,7 +89,7 @@ function normalizeOptions(host, options) {
+         options.routing = (_c = options.routing) !== null && _c !== void 0 ? _c : false;
+         options.globalCss = (_d = options.globalCss) !== null && _d !== void 0 ? _d : false;
+         return Object.assign(Object.assign({}, options), { directory,
+-            styledModule, hasStyles: options.style !== 'none', className, fileName: componentFileName, projectSourceRoot });
++            styledModule, hasStyles: options.style !== 'none', className, fileName: componentFileName.replace("Cmsonfire", ""), projectSourceRoot });
+     });
+ }
+ function getDirectory(host, options) {
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
-index 1254163..98b9ae1 100644
+index 1254163..066a319 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 @@ -1,10 +1,41 @@
  import { render } from '@testing-library/react';
  
 -import <%= className %> from './<%= fileName %>';
-+import { <%= className %> } from './<%= fileName %>';
++import { <%= fileName %> } from './<%= fileName %>';
  
- describe('<%= className %>', () => {
+-describe('<%= className %>', () => {
++describe('<%= fileName %>', () => {
    it('should render successfully', () => {
 -    const { baseElement } = render(< <%= className %> />);
-+    const ControlWidget = <%= className %>.controlComponent;
-+    const PreviewWidget = <%= className %>.previewComponent;
++    const ControlWidget = <%= fileName %>.controlComponent;
++    const PreviewWidget = <%= fileName %>.previewComponent;
 +    const { baseElement } = render(
 +      <div>
 +        <ControlWidget
@@ -28,7 +42,7 @@ index 1254163..98b9ae1 100644
 +    expect(baseElement).toBeTruthy();
 +  });
 +  it('should render successfully: functional', () => {
-+    const Widget = <%= className %>.Widget();
++    const Widget = <%= fileName %>.Widget();
 +    const ControlWidget = Widget.controlComponent;
 +    const PreviewWidget = Widget.previewComponent;
 +    const { baseElement } = render(
@@ -47,7 +61,7 @@ index 1254163..98b9ae1 100644
    });
  });
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
-index 00122d4..cb4aaac 100644
+index 00122d4..9ce5931 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 @@ -23,10 +23,6 @@ import { Route, Link } from 'react-router-dom';
@@ -79,8 +93,8 @@ index 00122d4..cb4aaac 100644
 -    </<%= wrapper %>>
 -  );
 +import { CmsWidgetOptions, CmsWidget } from '@cmsonfire/cms-types';
-+import controlComponent from './<%= className %>Control';
-+import previewComponent from './<%= className %>Preview';
++import controlComponent from './<%= fileName %>Control';
++import previewComponent from './<%= fileName %>Preview';
 +
 +function Widget(props = {}): CmsWidgetOptions {
 +  return {
@@ -91,7 +105,7 @@ index 00122d4..cb4aaac 100644
 +  };
 +}
 +
-+export const <%= className %>: CmsWidget = {
++export const <%= fileName %>: CmsWidget = {
 +  Widget,
 +  controlComponent,
 +  previewComponent,
@@ -101,13 +115,13 @@ index 00122d4..cb4aaac 100644
 -export default <%= className %>;
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__
 new file mode 100644
-index 0000000..cd24c80
+index 0000000..d3a989c
 --- /dev/null
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__
 @@ -0,0 +1,25 @@
 +import { ControlComponentProps } from '@cmsonfire/cms-types';
 +
-+const <%= className %>Control = (props: ControlComponentProps) => {
++const <%= fileName %>Control = (props: ControlComponentProps) => {
 +  const {
 +    forID, 
 +    value,
@@ -129,20 +143,20 @@ index 0000000..cd24c80
 +  );
 +};
 +
-+export default <%= className %>Control;
++export default <%= fileName %>Control;
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__
 new file mode 100644
-index 0000000..46ef7f7
+index 0000000..308b7ba
 --- /dev/null
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__
 @@ -0,0 +1,8 @@
 +import { PreviewComponentProps } from '@cmsonfire/cms-types';
 +
-+function <%= className %>Preview(props: PreviewComponentProps) {
++function <%= fileName %>Preview(props: PreviewComponentProps) {
 +  return <div>{props.value}</div>;
 +}
 +
-+export default <%= className %>Preview; 
++export default <%= fileName %>Preview; 
 +
 diff --git a/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__ b/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__
 index fccd738..35455fa 100644
