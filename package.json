@@ -21,7 +21,8 @@
     "react-dom": "18.2.0",
     "react-textarea-autosize": "^8.3.4",
     "regenerator-runtime": "0.13.7",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
     "@changesets/cli": "^2.24.3",

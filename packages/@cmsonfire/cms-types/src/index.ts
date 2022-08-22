@@ -1,1 +1,2 @@
-export * from './lib/CmsonfireCmsTypes';
+export * as CmsWidget from './CmsWidget';
+export * as CmsCore from './CmsCore';
