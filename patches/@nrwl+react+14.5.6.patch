@@ -12,56 +12,56 @@ index d7421f2..f9d0ddf 100644
  }
  function getDirectory(host, options) {
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
-index 1254163..066a319 100644
+index 1254163..5be601c 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
-@@ -1,10 +1,41 @@
+@@ -1,10 +1,40 @@
  import { render } from '@testing-library/react';
++import Widget, { <%= fileName %>Widget } from './CmsLibTemplate';
  
 -import <%= className %> from './<%= fileName %>';
-+import { <%= fileName %> } from './<%= fileName %>';
- 
+-
 -describe('<%= className %>', () => {
-+describe('<%= fileName %>', () => {
++describe('CmsLibTemplate', () => {
    it('should render successfully', () => {
 -    const { baseElement } = render(< <%= className %> />);
-+    const ControlWidget = <%= fileName %>.controlComponent;
-+    const PreviewWidget = <%= fileName %>.previewComponent;
++    const ControlWidget = <%= fileName %>Widget.Control;
++    const PreviewWidget = <%= fileName %>Widget.Preview;
 +    const { baseElement } = render(
 +      <div>
 +        <ControlWidget
 +          forID="test"
-+          onChange={(e) => e.target.value}
++          onChange={(value) => value}
 +          classNameWrapper=""
 +          setActiveStyle={() => null}
 +          setInactiveStyle={() => null}
 +        />
-+        <PreviewWidget value={<div>test</div>} />
++        <PreviewWidget value={'test'} />
 +      </div>
 +    );
 +    expect(baseElement).toBeTruthy();
 +  });
 +  it('should render successfully: functional', () => {
-+    const Widget = <%= fileName %>.Widget();
-+    const ControlWidget = Widget.controlComponent;
-+    const PreviewWidget = Widget.previewComponent;
++    const <%= fileName %>Widget = Widget();
++    const ControlWidget = <%= fileName %>Widget.Control;
++    const PreviewWidget = <%= fileName %>Widget.Preview;
 +    const { baseElement } = render(
 +      <div>
 +        <ControlWidget
 +          forID="test"
-+          onChange={(e) => e.target.value}
++          onChange={(value) => value}
 +          classNameWrapper=""
 +          setActiveStyle={() => null}
 +          setInactiveStyle={() => null}
 +        />
-+        <PreviewWidget value={<div>test</div>} />
++        <PreviewWidget value={'test'} />
 +      </div>
 +    );
      expect(baseElement).toBeTruthy();
    });
  });
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
-index 00122d4..9ce5931 100644
+index 00122d4..2c3f8a9 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 @@ -23,10 +23,6 @@ import { Route, Link } from 'react-router-dom';
@@ -75,7 +75,7 @@ index 00122d4..9ce5931 100644
  <% if (styledModule && styledModule !== 'styled-jsx') { %>
  const Styled<%= className %> = styled.div`
    color: pink;
-@@ -50,20 +46,23 @@ export class <%= className %> extends Component<<%= className %>Props> {
+@@ -50,20 +46,20 @@ export class <%= className %> extends Component<<%= className %>Props> {
    }
  }
  <% } else { %>
@@ -92,38 +92,37 @@ index 00122d4..9ce5931 100644
 -      <% } %>
 -    </<%= wrapper %>>
 -  );
-+import { CmsWidgetOptions, CmsWidget } from '@cmsonfire/cms-types';
-+import controlComponent from './<%= fileName %>Control';
-+import previewComponent from './<%= fileName %>Preview';
++import { CmsWidget } from '@cmsonfire/cms-types';
++import Control from './<%= fileName %>Control';
++import Preview from './<%= fileName %>Preview';
 +
-+function Widget(props = {}): CmsWidgetOptions {
-+  return {
-+    name: 'text',
-+    controlComponent,
-+    previewComponent,
-+    ...props,
-+  };
-+}
-+
-+export const <%= fileName %>: CmsWidget = {
-+  Widget,
-+  controlComponent,
-+  previewComponent,
++export const <%= fileName %>Widget: CmsWidget.CmsWidgetParams<string> = {
++  name: 'text',
++  Control,
++  Preview,
  };
++
++const Widget: CmsWidget.Widget<string> = () => {
++  return <%= fileName %>Widget;
++};
++
++export default Widget;
  <% } %>
  
 -export default <%= className %>;
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__
 new file mode 100644
-index 0000000..d3a989c
+index 0000000..6450dd2
 --- /dev/null
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Control.tsx__tmpl__
-@@ -0,0 +1,25 @@
-+import { ControlComponentProps } from '@cmsonfire/cms-types';
+@@ -0,0 +1,27 @@
++import { CmsWidget } from '@cmsonfire/cms-types';
 +
-+const <%= fileName %>Control = (props: ControlComponentProps) => {
++const <%= fileName %>Control: CmsWidget.CmsWidgetControl<string> = (
++  props: CmsWidget.CmsWidgetControlProps<string>
++) => {
 +  const {
-+    forID, 
++    forID,
 +    value,
 +    onChange,
 +    classNameWrapper,
@@ -146,18 +145,19 @@ index 0000000..d3a989c
 +export default <%= fileName %>Control;
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__
 new file mode 100644
-index 0000000..308b7ba
+index 0000000..f3c3088
 --- /dev/null
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__Preview.tsx__tmpl__
-@@ -0,0 +1,8 @@
-+import { PreviewComponentProps } from '@cmsonfire/cms-types';
+@@ -0,0 +1,9 @@
++import { CmsWidget } from '@cmsonfire/cms-types';
 +
-+function <%= fileName %>Preview(props: PreviewComponentProps) {
-+  return <div>{props.value}</div>;
-+}
++const <%= fileName %>Preview: CmsWidget.CmsWidgetPreview<string> = (
++  options: CmsWidget.CmsWidgetPreviewProps<string>
++) => {
++  return <div>{options.value}</div>;
++};
 +
-+export default <%= fileName %>Preview; 
-+
++export default <%= fileName %>Preview;
 diff --git a/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__ b/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__
 index fccd738..35455fa 100644
 --- a/node_modules/@nrwl/react/src/generators/library/files/lib/.babelrc__tmpl__
