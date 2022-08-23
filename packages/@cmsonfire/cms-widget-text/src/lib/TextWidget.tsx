@@ -1,18 +1,15 @@
-import { CmsWidgetOptions, CmsWidget } from '@cmsonfire/cms-types';
-import controlComponent from './TextWidgetControl';
-import previewComponent from './TextWidgetPreview';
+import { CmsWidget } from '@cmsonfire/cms-types';
+import Control from './TextWidgetControl';
+import Preview from './TextWidgetPreview';
 
-function Widget(props = {}): CmsWidgetOptions {
-  return {
-    name: 'text',
-    controlComponent,
-    previewComponent,
-    ...props,
-  };
-}
-
-export const TextWidget: CmsWidget = {
-  Widget,
-  controlComponent,
-  previewComponent,
+export const TextWidget: CmsWidget.CmsWidgetParams<string> = {
+  name: 'text',
+  Control,
+  Preview,
 };
+
+const Widget: CmsWidget.Widget<string> = () => {
+  return TextWidget;
+};
+
+export default Widget;

@@ -1,6 +1,8 @@
-import { ControlComponentProps } from '@cmsonfire/cms-types';
+import { CmsWidget } from '@cmsonfire/cms-types';
 
-const TemplateControl = (props: ControlComponentProps) => {
+const TemplateControl: CmsWidget.CmsWidgetControl<string> = (
+  props: CmsWidget.CmsWidgetControlProps<string>
+) => {
   const {
     forID,
     value,

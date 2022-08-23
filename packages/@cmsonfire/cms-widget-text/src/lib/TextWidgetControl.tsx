@@ -1,7 +1,9 @@
-import { ControlComponentProps } from '@cmsonfire/cms-types';
+import { CmsWidget } from '@cmsonfire/cms-types';
 import Textarea from 'react-textarea-autosize';
 
-const TextWidgetControl = (props: ControlComponentProps) => {
+const TextWidgetControl: CmsWidget.CmsWidgetControl<string> = (
+  props: CmsWidget.CmsWidgetControlProps<string>
+) => {
   const {
     forID,
     value,

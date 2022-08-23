@@ -203,7 +203,7 @@ export function Index() {
                 CMS.registerWidget(TextWidget.Widget())
               </pre>
               <p>
-                <TextWidget.controlComponent
+                <TextWidget.Control
                   forID="test"
                   classNameWrapper={styles.widgetWrapper}
                   setActiveStyle={() => null}
@@ -212,7 +212,7 @@ export function Index() {
                     console.log(event);
                   }}
                   value={'This is text'}
-                ></TextWidget.controlComponent>
+                ></TextWidget.Control>
               </p>
             </details>
             <details>

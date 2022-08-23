@@ -5,7 +5,7 @@ import type { Pluggable } from 'unified';
 import {
   CmsWidget,
   CmsWidgetControlProps,
-  CmsWidgetParam,
+  CmsWidgetParams,
   CmsWidgetPreviewProps,
   GetAssetFunction,
 } from '../CmsWidget';
@@ -561,7 +561,7 @@ export interface CMS {
     component: React.ComponentType<PreviewTemplateComponentProps>
   ) => void;
   registerWidget: (
-    widget: string | CmsWidgetParam,
+    widget: string | CmsWidgetParams,
     control?: React.ComponentType<CmsWidgetControlProps> | string,
     preview?: React.ComponentType<CmsWidgetPreviewProps>
   ) => void;

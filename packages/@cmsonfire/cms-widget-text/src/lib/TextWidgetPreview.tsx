@@ -1,7 +1,9 @@
-import { PreviewComponentProps } from '@cmsonfire/cms-types';
+import { CmsWidget } from '@cmsonfire/cms-types';
 
-function TextWidgetPreview(props: PreviewComponentProps) {
-  return <div>{props.value}</div>;
-}
+const TextWidgetPreview: CmsWidget.CmsWidgetPreview<string> = (
+  options: CmsWidget.CmsWidgetPreviewProps<string>
+) => {
+  return <div>{options.value}</div>;
+};
 
 export default TextWidgetPreview;

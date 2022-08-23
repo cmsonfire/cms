@@ -1,1 +1,1 @@
-export { CmsLibTemplate } from './lib/CmsLibTemplate';
+export { TemplateWidget } from './lib/CmsLibTemplate';
