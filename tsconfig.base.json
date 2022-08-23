@@ -20,9 +20,6 @@
         "packages/@cmsonfire/cms-lib-template/src/index.ts"
       ],
       "@cmsonfire/cms-types": ["packages/@cmsonfire/cms-types/src/index.ts"],
-      "@cmsonfire/cms-widget-string": [
-        "packages/@cmsonfire/string-widget/src/index.ts"
-      ],
       "@cmsonfire/cms-widget-text": [
         "packages/@cmsonfire/cms-widget-text/src/index.ts"
       ]

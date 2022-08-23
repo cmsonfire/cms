@@ -12,12 +12,12 @@ index d7421f2..f9d0ddf 100644
  }
  function getDirectory(host, options) {
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
-index 1254163..5be601c 100644
+index 1254163..6e9c31b 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 @@ -1,10 +1,40 @@
  import { render } from '@testing-library/react';
-+import Widget, { <%= fileName %>Widget } from './CmsLibTemplate';
++import Widget, { <%= fileName %>Widget } from './<%= fileName %>';
  
 -import <%= className %> from './<%= fileName %>';
 -
