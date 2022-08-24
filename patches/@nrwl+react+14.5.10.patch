@@ -12,12 +12,12 @@ index d7421f2..f9d0ddf 100644
  }
  function getDirectory(host, options) {
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
-index 1254163..6e9c31b 100644
+index 1254163..93f7be9 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.spec.tsx__tmpl__
 @@ -1,10 +1,40 @@
  import { render } from '@testing-library/react';
-+import Widget, { <%= fileName %>Widget } from './<%= fileName %>';
++import Widget, { <%= fileName %> } from './<%= fileName %>';
  
 -import <%= className %> from './<%= fileName %>';
 -
@@ -25,8 +25,8 @@ index 1254163..6e9c31b 100644
 +describe('CmsLibTemplate', () => {
    it('should render successfully', () => {
 -    const { baseElement } = render(< <%= className %> />);
-+    const ControlWidget = <%= fileName %>Widget.Control;
-+    const PreviewWidget = <%= fileName %>Widget.Preview;
++    const ControlWidget = <%= fileName %>.Control;
++    const PreviewWidget = <%= fileName %>.Preview;
 +    const { baseElement } = render(
 +      <div>
 +        <ControlWidget
@@ -42,9 +42,9 @@ index 1254163..6e9c31b 100644
 +    expect(baseElement).toBeTruthy();
 +  });
 +  it('should render successfully: functional', () => {
-+    const <%= fileName %>Widget = Widget();
-+    const ControlWidget = <%= fileName %>Widget.Control;
-+    const PreviewWidget = <%= fileName %>Widget.Preview;
++    const <%= fileName %> = Widget();
++    const ControlWidget = <%= fileName %>.Control;
++    const Preview = <%= fileName %>Widget.Preview;
 +    const { baseElement } = render(
 +      <div>
 +        <ControlWidget
@@ -61,7 +61,7 @@ index 1254163..6e9c31b 100644
    });
  });
 diff --git a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
-index 00122d4..2c3f8a9 100644
+index 00122d4..44b419f 100644
 --- a/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 +++ b/node_modules/@nrwl/react/src/generators/component/files/__fileName__.tsx__tmpl__
 @@ -23,10 +23,6 @@ import { Route, Link } from 'react-router-dom';
@@ -96,14 +96,14 @@ index 00122d4..2c3f8a9 100644
 +import Control from './<%= fileName %>Control';
 +import Preview from './<%= fileName %>Preview';
 +
-+export const <%= fileName %>Widget: CmsWidget.CmsWidgetParams<string> = {
++export const <%= fileName %>: CmsWidget.CmsWidgetParams<string> = {
 +  name: 'text',
 +  Control,
 +  Preview,
  };
 +
 +const Widget: CmsWidget.Widget<string> = () => {
-+  return <%= fileName %>Widget;
++  return <%= fileName %>;
 +};
 +
 +export default Widget;

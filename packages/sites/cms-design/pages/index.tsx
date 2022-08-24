@@ -1,5 +1,6 @@
 import styles from './index.module.css';
 import { TextWidget } from '@cmsonfire/cms-widget-text';
+import { StringWidget } from '@cmsonfire/cms-widget-string';
 
 export function Index() {
   /*
@@ -202,8 +203,33 @@ export function Index() {
                 <span># Add Your Component</span>
                 CMS.registerWidget(TextWidget.Widget())
               </pre>
+              <summary>
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                String Widget
+              </summary>
+              <pre>
+                <span># Import UI lib</span>
+                import CMS from &apos;@cmsonfire/cms-core&apos;;
+                <br />
+                import {`{StringWidget}`} from
+                &apos;@cmsonfire/cms-widget-string&apos;;
+                <span># Add Your Component</span>
+                CMS.registerWidget(StringWidget.Widget())
+              </pre>
               <p>
-                <TextWidget.Control
+                <StringWidget.Control
                   forID="test"
                   classNameWrapper={styles.widgetWrapper}
                   setActiveStyle={() => null}
@@ -211,8 +237,8 @@ export function Index() {
                   onChange={(event) => {
                     console.log(event);
                   }}
-                  value={'This is text'}
-                ></TextWidget.Control>
+                  value={'This is string'}
+                ></StringWidget.Control>
               </p>
             </details>
             <details>

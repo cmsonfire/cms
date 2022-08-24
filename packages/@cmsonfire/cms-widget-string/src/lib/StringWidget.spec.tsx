@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
-import Widget, { StringWidgetWidget } from './StringWidget';
+import Widget, { StringWidget } from './StringWidget';
 
 describe('CmsLibTemplate', () => {
   it('should render successfully', () => {
-    const ControlWidget = StringWidgetWidget.Control;
-    const PreviewWidget = StringWidgetWidget.Preview;
+    const ControlWidget = StringWidget.Control;
+    const PreviewWidget = StringWidget.Preview;
     const { baseElement } = render(
       <div>
         <ControlWidget
@@ -20,9 +20,9 @@ describe('CmsLibTemplate', () => {
     expect(baseElement).toBeTruthy();
   });
   it('should render successfully: functional', () => {
-    const StringWidgetWidget = Widget();
-    const ControlWidget = StringWidgetWidget.Control;
-    const PreviewWidget = StringWidgetWidget.Preview;
+    const StringWidget = Widget();
+    const ControlWidget = StringWidget.Control;
+    const PreviewWidget = StringWidget.Preview;
     const { baseElement } = render(
       <div>
         <ControlWidget
