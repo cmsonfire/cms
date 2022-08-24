@@ -5,7 +5,7 @@
 A `patch-package` applied to the repository allows for creation of a widget library using typescript.
 
 ```sh
-yarn nx generate @nrwl/react:library cms-widget-string --directory=@cmsonfire --buildable --compiler=swc --importPath=@cmsonfire/cms-widget-string --pascalCaseFiles --publishable --no-routing --name=StringWidget
+yarn nx generate @nrwl/react:library cms-widget-string --directory=@cmsonfire --buildable --compiler=babel --importPath=@cmsonfire/cms-widget-string --pascalCaseFiles --publishable --no-routing --name=StringWidget
 ```
 
 ## Generate a library

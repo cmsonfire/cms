@@ -1,0 +1,8 @@
+{
+  "name": "@cmsonfire/cms-widget-string",
+  "version": "0.0.1",
+  "publishConfig": {
+    "directory": "../../../dist/packages/@cmsonfire/cms-widget-string",
+    "access": "public"
+  }
+}
