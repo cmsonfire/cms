@@ -1,6 +1,6 @@
 {
   "name": "@cmsonfire/cms-types",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publishConfig": {
     "directory": "../../../dist/packages/@cmsonfire/cms-types",
     "access": "public"
