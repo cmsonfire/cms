@@ -35,6 +35,10 @@ jobs:
         if: ${{ success() }}
         run: yarn lint:all
 
+      - name: Fix Packages
+        if: ${{ success() }}
+        run: yarn removeDir:all
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
