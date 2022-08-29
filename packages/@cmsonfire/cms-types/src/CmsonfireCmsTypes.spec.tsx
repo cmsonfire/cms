@@ -1,37 +1,47 @@
 import { render } from '@testing-library/react';
 
 import {
-  ControlWidget,
+  Widget,
   CmsWidgetParams,
   CmsWidgetControlProps,
   CmsWidgetPreviewProps,
+  CmsWidgetControl,
+  CmsWidgetPreview,
 } from './CmsWidget';
 
-const Control = (props: CmsWidgetControlProps<string>) => {
+const Control: CmsWidgetControl = (props: CmsWidgetControlProps<string>) => {
   return <div>{JSON.stringify(props, null, 2)}</div>;
 };
-const Preview = (props: CmsWidgetPreviewProps<string>) => {
+const Preview: CmsWidgetPreview = (props: CmsWidgetPreviewProps<string>) => {
   const { value } = props;
   return <div>{value}</div>;
 };
 
+const TestWidget: Widget<string> = () => {
+  return {
+    name: 'test',
+    Control,
+    Preview,
+  };
+};
+
 describe('CmsonfireCmsTypes', () => {
-  it('should render successfully', () => {
-    const Widget: ControlWidget = ({
-      name,
-      controlComponent,
-      previewComponent,
-      ...props
-    }: CmsWidgetParams) => {
-      return <div>{name}</div>;
-    };
+  const { name, Control, Preview } = TestWidget();
+  it('Control should render successfully', () => {
     const { baseElement } = render(
-      <Widget
-        name="test"
-        controlComponent={Control}
-        previewComponent={Preview}
+      <Control
+        forID={name}
+        value={''}
+        onChange={(v: string) => v}
+        classNameWrapper={'class-name'}
+        setActiveStyle={() => null}
+        setInactiveStyle={() => null}
       />
     );
+    expect(baseElement).toBeTruthy();
+  });
+  it('Preview should render successfully', () => {
+    const { baseElement } = render(<Preview value={''} />);
     expect(baseElement).toBeTruthy();
   });
 });
