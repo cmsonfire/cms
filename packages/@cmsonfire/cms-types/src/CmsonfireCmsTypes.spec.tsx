@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 
 import {
   Widget,
-  CmsWidgetParams,
   CmsWidgetControlProps,
   CmsWidgetPreviewProps,
   CmsWidgetControl,
