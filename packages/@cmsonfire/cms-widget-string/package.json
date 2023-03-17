@@ -15,7 +15,6 @@
     "lint": "tsc",
     "test": "jest"
   },
-  "private": true,
   "repository": {
     "url": "https://github.com/cmsonfire/cms.git"
   },
