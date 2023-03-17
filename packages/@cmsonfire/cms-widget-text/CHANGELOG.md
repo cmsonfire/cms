@@ -1,4 +1,4 @@
-# @cmsonfire/cms-widget-text
+# [@cmsonfire/cms-widget-text](https://www.npmjs.com/package/@cmsonfire/cms-widget-text?activeTab=versions)
 
 ## 0.0.5
 

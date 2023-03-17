@@ -1,4 +1,4 @@
-# @cmsonfire/cms-types
+# [@cmsonfire/cms-types](https://www.npmjs.com/package/@cmsonfire/cms-types?activeTab=versions)
 
 ## 0.0.5
 

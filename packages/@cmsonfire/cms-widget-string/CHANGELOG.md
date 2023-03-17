@@ -1,4 +1,4 @@
-# @cmsonfire/cms-widget-string
+# [@cmsonfire/cms-widget-string](https://www.npmjs.com/package/@cmsonfire/cms-widget-string?activeTab=versions)
 
 ## 0.0.3
 

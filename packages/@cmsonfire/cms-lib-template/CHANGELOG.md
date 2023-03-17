@@ -1,4 +1,4 @@
-# @cmsonfire/cms-lib-template
+# @cmsonfire/cms-lib-template (private)
 
 ## 0.0.3
 
