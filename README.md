@@ -1,6 +1,17 @@
+# @cmsonfire/cms-monorepo
+
+Rewrite of NetlifyCMS during Decap conversion
+
+## Monorepo Setup
+
+- Typescript
+- pnpm
+- tsup
+- Changesets 📐
+
 # CMS
 
-This project is a proof of concept to use NX for the monorepo for a `netlify-cms` rewrite.
+This project is a proof of concept to use `pnpm`, `tsup` for the monorepo for the rewrite using `typescript`.
 
 At first, this project will follow most config and api requirements to allow for an easy conversion to `@cmsonfire/cms-app` with no guarantee of breaking changes. Improvements will be made to standardize design decisions over trying to simplify usage for plug-n-play (3rd party projects will be able to do plug-n-play versions).
 

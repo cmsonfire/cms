@@ -1,6 +1,6 @@
-# @cmsonfire/cms-widget-text
+# @cmsonfire/cms-widget-string
 
-## 0.0.4
+## 0.0.2
 
 ### Patch Changes
 

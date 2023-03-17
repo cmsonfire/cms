@@ -1,8 +1,26 @@
 {
   "name": "@cmsonfire/cms-types",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "publishConfig": {
-    "directory": "../../../dist/packages/@cmsonfire/cms-types",
     "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "unified": "^10.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28"
   }
 }

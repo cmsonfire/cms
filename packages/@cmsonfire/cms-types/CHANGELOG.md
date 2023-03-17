@@ -1,13 +1,7 @@
 # @cmsonfire/cms-types
 
-## 0.0.3
+## 0.0.4
 
 ### Patch Changes
 
-- 54357af: Fix types on widgets
-
-## 0.0.2
-
-### Patch Changes
-
-- Initialize
+- fb3aad7: New build configuration (chore)

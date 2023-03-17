@@ -1,21 +1,8 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# dependencies
+node_modules/
 
 # compiled output
-dist
-/tmp
-/out-tsc
-
-# dependencies
-node_modules
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+dist/
 
 # IDE - VSCode
 .vscode/*
@@ -33,10 +20,6 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-
-# System Files
-.DS_Store
-Thumbs.db
 
 # Next.js
 .next
