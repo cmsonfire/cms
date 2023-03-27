@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import type { Pluggable } from 'unified';
-//   import type { List, Map } from 'immutable';
+import type { List, Map } from 'immutable';
 import {
   CmsWidget,
   CmsWidgetControlProps,

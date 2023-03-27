@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { ReactElement } from 'react';
+import { ReactElement, JSXElementConstructor } from 'react';
+import { Map as ImmutableMap } from 'immutable';
+
+export { ImmutableMap };
 
 export type GetAssetFunction = (asset: string) => {
   url: string;
@@ -10,9 +13,9 @@ export type GetAssetFunction = (asset: string) => {
 };
 
 export interface CmsWidgetControlProps<T = any> {
-  onChange: (value: T) => void;
+  onChange: (value: T | '') => void;
   forID: string;
-  field?: Map<string, any>;
+  field?: ImmutableMap<string, any>;
   value?: T;
   classNameWrapper: string;
   setActiveStyle: () => void;
@@ -20,20 +23,20 @@ export interface CmsWidgetControlProps<T = any> {
 }
 export interface CmsWidgetPreviewProps<T = any> {
   value: T;
-  field?: Map<string, any>;
-  metadata?: Map<string, any>;
+  field?: ImmutableMap<string, any>;
+  metadata?: ImmutableMap<string, any>;
   getAsset?: GetAssetFunction;
-  entry?: Map<string, any>;
-  fieldsMetaData?: Map<string, any>;
+  entry?: ImmutableMap<string, any>;
+  fieldsMetaData?: ImmutableMap<string, any>;
 }
 
 export type CmsWidgetControl<T = any> = (
   options: CmsWidgetControlProps<T>
-) => ReactElement<any, any>;
+) => ReactElement<any, string | JSXElementConstructor<any>> | null;
 
 export type CmsWidgetPreview<T = any> = (
   options: CmsWidgetPreviewProps<T>
-) => ReactElement<any, any>;
+) => ReactElement<any, string | JSXElementConstructor<any>> | null;
 
 export interface CmsWidgetParams<T = any> {
   name: string;

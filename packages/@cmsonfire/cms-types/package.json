@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.28"
+  },
+  "dependencies": {
+    "immutable": "^4.3.0"
   }
 }
