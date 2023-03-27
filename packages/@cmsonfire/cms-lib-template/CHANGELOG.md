@@ -1,5 +1,12 @@
 # @cmsonfire/cms-lib-template (private)
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [61509dc]
+  - @cmsonfire/cms-types@0.0.6
+
 ## 0.0.3
 
 ### Patch Changes

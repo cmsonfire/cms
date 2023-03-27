@@ -1,5 +1,12 @@
 # [@cmsonfire/cms-widget-text](https://www.npmjs.com/package/@cmsonfire/cms-widget-text?activeTab=versions)
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [61509dc]
+  - @cmsonfire/cms-types@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
